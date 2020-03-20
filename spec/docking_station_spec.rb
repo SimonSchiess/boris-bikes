@@ -22,9 +22,9 @@ describe DockingStation do
       expect { DockingStation.new.release_bike }.to raise_error "No bikes available"
     end
 
-    it 'will not let me dock two bikes' do
+    it 'will not let me dock 21 bikes' do
       station = DockingStation.new
-      station.dock(Bike.new)
+      20.times { station.dock(Bike.new) }
       expect { station.dock(Bike.new) }.to raise_error "Docking Station full"
     end
 

@@ -15,7 +15,7 @@ class DockingStation
   end
 
   def dock(bike)
-    if @bikes.count > 0
+    if @bikes.count == 20
       raise "Docking Station full"
     else
       @bikes << bike
